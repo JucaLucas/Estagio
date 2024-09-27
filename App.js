@@ -4,6 +4,7 @@ import { Button, Text, View, StatusBar, TouchableOpacity, Image, TextInput } fro
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import SosScreen from './screens/sos';
 
 
 // Funções de tela
@@ -58,7 +59,7 @@ function HomeScreen({ navigation }) {
       <TouchableOpacity
         onPress={() => {
           console.log('Nome do usuário:', name); // Armazena ou usa o nome aqui
-          navigation.navigate('Details');
+          navigation.navigate('SOS');
         }}
         style={{
           alignItems:'center',
@@ -137,6 +138,7 @@ function HomeStackScreen({ navigation }) {
       >
         <HomeStack.Screen name="Home" component={HomeScreen} options={{ title: '' }} />
         <HomeStack.Screen name="Details" component={DetailsScreen} />
+        <HomeStack.Screen name="SOS" component={SosScreen} options={{ headerShown: false }}/>
       </HomeStack.Navigator>
     </>
   );
